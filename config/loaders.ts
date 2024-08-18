@@ -10,6 +10,7 @@ export function createLoaders  (options : IWebpackOptions) : ModuleOptions["rule
 		loader: "css-loader",
 		options: {
 			modules: {
+				auto : true,
 				localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:8]"
 			} 
 		}
