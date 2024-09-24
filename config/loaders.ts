@@ -33,7 +33,15 @@ export function createLoaders  (options : IWebpackOptions) : ModuleOptions["rule
 		use: [
 			isDev ? "style-loader" : MiniCssExtractPlugin.loader,
 			cssModules,
-			"sass-loader"
+			{
+				loader: "sass-loader",
+				options: {
+					api: "modern-compiler",
+					sassOptions: {
+						outputStyle: "compressed"
+					}
+				}
+			}
 		]
 	};
 
